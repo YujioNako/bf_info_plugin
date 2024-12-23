@@ -379,7 +379,7 @@ KPM：${JSON.stringify(jsonobj.classes[i].kpm)}
     async makeForwardMsg (title, msg) {
     let nickname = Bot.nickname
     if (this.e.isGroup) {
-      let info = await Bot.getGroupMemberInfo(this.e.group_id, Bot.uin)
+      let info = await Bot.pickMember(this.e.group_id, Bot.uin)
       nickname = info.card ?? info.nickname
     }
     let userInfo = {
